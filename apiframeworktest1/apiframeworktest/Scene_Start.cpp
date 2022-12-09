@@ -1,12 +1,12 @@
 #include "pch.h"
 #include "Scene_Start.h"
 #include "Object.h"
-#include "Player.h"
-#include "Monster.h"
+//#include "Player.h"
+//#include "Monster.h"
 #include "Core.h"
 #include "Image.h"
 #include "PathMgr.h"
-#include "CollisionMgr.h"
+//#include "CollisionMgr.h"
 #include "KeyMgr.h"
 #include "SceneMgr.h"
 #include "SoundMgr.h"
@@ -22,10 +22,10 @@ void Scene_Start::Enter()
 	SoundMgr::GetInst()->LoadSound(L"BGM", true, L"Sound\\pianobgm.wav");
 	SoundMgr::GetInst()->Play(L"BGM");
 	// Object 추가
-	Object* pObj = new Player;
-	pObj->SetPos(Vec2(Core::GetInst()->GetResolution().x/2, Core::GetInst()->GetResolution().y/2));
-	pObj->SetScale(Vec2(100.f,100.f));
-	AddObject(pObj, GROUP_TYPE::PLAYER);
+	//Object* pObj = new Player;
+	//pObj->SetPos(Vec2(Core::GetInst()->GetResolution().x/2, Core::GetInst()->GetResolution().y/2));
+	//pObj->SetScale(Vec2(100.f,100.f));
+	//AddObject(pObj, GROUP_TYPE::PLAYER);
 
 //	Object* pOtherPlayer = new Player(*(Player*)pObj);
 	/*Object* pOtherPlayer = pObj->Clone();
@@ -42,7 +42,7 @@ void Scene_Start::Enter()
 	//AddObject(pMonsterObj, GROUP_TYPE::MONSTER);
 
 	// 몬스터 배치
-	Vec2 vResolution(Vec2(Core::GetInst()->GetResolution()));
+	/*Vec2 vResolution(Vec2(Core::GetInst()->GetResolution()));
 	int iMonster = 16;
 	float fMoveDist = 25.f;
 	float fObjScale = 50.f;
@@ -57,7 +57,7 @@ void Scene_Start::Enter()
 		pMonsterObj->SetCenterPos(pMonsterObj->GetPos());
 		pMonsterObj->SetMoveDistance(fMoveDist);
 		AddObject(pMonsterObj, GROUP_TYPE::MONSTER);
-	}
+	}*/
 	//pObj = new Object;
 
 	//pObj->SetPos(Vec2(640.f, 384.f));
@@ -66,15 +66,17 @@ void Scene_Start::Enter()
 	//AddObject(pObj, GROUP_TYPE::DEFAULT);
 	// 충돌 지정 
 	// Player - Monster 그룹 간의 충돌 체크
-	CollisionMgr::GetInst()->CheckGroup(GROUP_TYPE::PLAYER, GROUP_TYPE::MONSTER);
-	CollisionMgr::GetInst()->CheckGroup(GROUP_TYPE::BULLET_PLAYER, GROUP_TYPE::MONSTER);
+	// 
+	// 
+	//CollisionMgr::GetInst()->CheckGroup(GROUP_TYPE::PLAYER, GROUP_TYPE::MONSTER);
+	//CollisionMgr::GetInst()->CheckGroup(GROUP_TYPE::BULLET_PLAYER, GROUP_TYPE::MONSTER);
 
 }
 
 void Scene_Start::Exit()
 {
 	DeleteAll();
-	CollisionMgr::GetInst()->CheckReset();
+	//CollisionMgr::GetInst()->CheckReset();
 }
 
 void Scene_Start::Update()
