@@ -21,6 +21,7 @@ void Scene_Start::Enter()
 {
 	SoundMgr::GetInst()->LoadSound(L"BGM", true, L"Sound\\pianobgm.wav");
 	SoundMgr::GetInst()->Play(L"BGM");
+
 	// Object 추가
 	//Object* pObj = new Player;
 	//pObj->SetPos(Vec2(Core::GetInst()->GetResolution().x/2, Core::GetInst()->GetResolution().y/2));
@@ -82,8 +83,8 @@ void Scene_Start::Exit()
 void Scene_Start::Update()
 {  
 	Scene::Update();
-	if (KEY_TAP(KEY::ENTER))
+	if (KEY_TAP(KEY::ENTER) || KEY_TAP(KEY::SPACE))
 	{
-		ChangeScene(SCENE_TYPE::SCENE_01);
+		// 다음 텍스트 출력
 	}
 }
