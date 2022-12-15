@@ -1,6 +1,8 @@
 #pragma once
-#include<cassert>
-//#include<math.h>
+#include <cassert>
+#include "pch.h"
+#include <math.h>
+
 class Vec2
 {
 public:

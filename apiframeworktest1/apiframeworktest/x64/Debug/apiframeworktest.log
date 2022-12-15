@@ -24,11 +24,10 @@ C:\Users\USER\Documents\CarLoveSi\apiframeworktest1\apiframeworktest\Player.cpp(
   Scene_01.cpp
   Scene_Start.cpp
   SelectGDI.cpp
+  SlidePuzzle.cpp
+C:\Users\USER\Documents\CarLoveSi\apiframeworktest1\apiframeworktest\Puzzle.h(10,11): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\USER\Documents\CarLoveSi\apiframeworktest1\apiframeworktest\Puzzle.h(11,11): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   Sound.cpp
   SoundMgr.cpp
   TimeMgr.cpp
-  Vec2.cpp
-C:\Users\USER\Documents\CarLoveSi\apiframeworktest1\apiframeworktest\Vec2.cpp(26,5): warning C4244: '초기화 중': 'long'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\USER\Documents\CarLoveSi\apiframeworktest1\apiframeworktest\Vec2.cpp(27,5): warning C4244: '초기화 중': 'long'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  BWindow.cpp
   apiframeworktest.vcxproj -> C:\Users\USER\Documents\CarLoveSi\apiframeworktest1\OutPut\bin_debug\Gamep_winapiframework.exe

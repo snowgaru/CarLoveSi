@@ -1,4 +1,6 @@
 #pragma once
+
+void StartPuzzle();
 void CreatePiece();
 void ShufflePuzzle();
 void SlidePiece();

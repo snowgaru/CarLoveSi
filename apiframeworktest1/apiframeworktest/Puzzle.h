@@ -3,16 +3,32 @@
 class Puzzle {
 private:
 	Vec2 vec;
-	bool isComplete = false;
+	Vec2 curVec;
 public:
-	void SetVector(int x, int y)
+	Puzzle(int x, int y)
 	{
 		vec.x = x;
 		vec.y = y;
+		curVec = vec;
 	}
-	void SetBool(bool value)
+	~Puzzle()
 	{
-		isComplete = false;
+		delete(this);
 	}
-	bool ReturnIsComplete() { return isComplete; }
+	void SetVector(int x, int y)
+	{
+		curVec.x = x;
+		curVec.y = y;
+	}
+	bool CheckComplete()
+	{
+		if ((curVec.x == vec.x) && (curVec.y == vec.y))
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
 };

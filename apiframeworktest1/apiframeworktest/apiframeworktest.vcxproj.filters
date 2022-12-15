@@ -86,6 +86,12 @@
     <Filter Include="Engine\03. Manager\SoundMgr">
       <UniqueIdentifier>{e09d7cab-b2dc-4a5f-8924-8af5317c88d2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\09. Puzzle">
+      <UniqueIdentifier>{5739aa55-7f13-4157-ad37-bcd65dafe024}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\09. Puzzle\SlidePuzzle">
+      <UniqueIdentifier>{146641c4-a2ee-4541-8add-eb5daf2fc482}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Core.h">
@@ -184,6 +190,12 @@
     <ClInclude Include="SoundMgr.h">
       <Filter>Engine\03. Manager\SoundMgr</Filter>
     </ClInclude>
+    <ClInclude Include="SlidePuzzle.h">
+      <Filter>Engine\09. Puzzle\SlidePuzzle</Filter>
+    </ClInclude>
+    <ClInclude Include="Puzzle.h">
+      <Filter>Engine\09. Puzzle\SlidePuzzle</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="apiframeworktest.rc">
@@ -277,6 +289,12 @@
     </ClCompile>
     <ClCompile Include="SoundMgr.cpp">
       <Filter>Engine\03. Manager\SoundMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="SlidePuzzle.cpp">
+      <Filter>Engine\09. Puzzle\SlidePuzzle</Filter>
+    </ClCompile>
+    <ClCompile Include="Puzzle.cpp">
+      <Filter>Engine\09. Puzzle\SlidePuzzle</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
