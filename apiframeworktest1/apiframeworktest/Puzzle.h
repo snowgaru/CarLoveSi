@@ -1,34 +1,19 @@
 #pragma once
-#include "Vec2.h"
-class Puzzle {
+#include "Object.h"
+#include "pch.h"
+
+class Puzzle : public Object
+{
 private:
-	Vec2 vec;
-	Vec2 curVec;
+	CLONE(Puzzle);
 public:
-	Puzzle(int x, int y)
-	{
-		vec.x = x;
-		vec.y = y;
-		curVec = vec;
-	}
-	~Puzzle()
-	{
-		delete(this);
-	}
-	void SetVector(int x, int y)
-	{
-		curVec.x = x;
-		curVec.y = y;
-	}
-	bool CheckComplete()
-	{
-		if ((curVec.x == vec.x) && (curVec.y == vec.y))
-		{
-			return true;
-		}
-		else
-		{
-			return false;
-		}
-	}
+	Puzzle();
+	Puzzle(int x, int y);
+	~Puzzle();
+	bool check;
+	// Object을(를) 통해 상속됨
+	virtual void Update() override;
+	void CreatePuzzle(int x, int y);  
+	void Move();
+	bool CheckComplete();
 };

@@ -4,7 +4,7 @@
 						 static type mgr;\
 						return &mgr;\
 					}
-#define WINDOW_NAME L"Gameframework"
+#define WINDOW_NAME L"CarLoveSimulator"
 #define fDT TimeMgr::GetInst()->GetfDT()
 #define DT TimeMgr::GetInst()->GetDT()
 #define KEY_CHECK(key, state) KeyMgr::GetInst()->GetKey(key) == state
@@ -39,10 +39,8 @@ enum class KEY
 enum class GROUP_TYPE
 {
 	DEFAULT,
-	PLAYER,
-	BULLET_PLAYER,
-	BULLET_MONSTER,
-	MONSTER,
+	SLIDEPUZZLE,
+	CHOOSEEACHPUZZLE,
 
 	END = 32,
 };
