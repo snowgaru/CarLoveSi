@@ -92,6 +92,12 @@
     <Filter Include="Engine\04. Object\Image\TitleImage">
       <UniqueIdentifier>{18aeaf9c-1dfc-44e4-8177-7ed8a7b54ca6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\04. Object\Car">
+      <UniqueIdentifier>{185a498d-ab62-42a4-b4a0-30506faa551f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\04. Object\Image\Heart">
+      <UniqueIdentifier>{8fa047b1-8b76-440f-86ea-41367975f444}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Core.h">
@@ -193,6 +199,15 @@
     <ClInclude Include="TitleImage.h">
       <Filter>Engine\04. Object\Image\TitleImage</Filter>
     </ClInclude>
+    <ClInclude Include="Car.h">
+      <Filter>Engine\04. Object\Car</Filter>
+    </ClInclude>
+    <ClInclude Include="FaceEnum.h">
+      <Filter>Engine\01. Header</Filter>
+    </ClInclude>
+    <ClInclude Include="HeartImage.h">
+      <Filter>Engine\04. Object\Image\Heart</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="apiframeworktest.rc">
@@ -289,6 +304,15 @@
     </ClCompile>
     <ClCompile Include="TitleImage.cpp">
       <Filter>Engine\04. Object\Image\TitleImage</Filter>
+    </ClCompile>
+    <ClCompile Include="Car.cpp">
+      <Filter>Engine\04. Object\Car</Filter>
+    </ClCompile>
+    <ClCompile Include="FaceEnum.cpp">
+      <Filter>Engine\01. Header</Filter>
+    </ClCompile>
+    <ClCompile Include="HeartImage.cpp">
+      <Filter>Engine\04. Object\Image\Heart</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

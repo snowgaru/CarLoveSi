@@ -22,6 +22,7 @@ int g_arrVK[(int)KEY::LAST] =
 	'D',
 	'F',
 	'G',
+	'H',
 	'Z',
 	'X',
 	'C',

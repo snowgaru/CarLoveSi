@@ -35,8 +35,13 @@ void Scene_Start::Enter()
 
 	//m_vecObj[(UINT)GROUP_TYPE::DEFAULT].push_back(pObj); 
 
-	//Object* pObj = new TitleImage
+	Object* titleImageObj = new TitleImage;
+	titleImageObj->SetPos(Vec2(Core::GetInst()->GetResolution().x / 2.f,
+		Core::GetInst()->GetResolution().y / 2.f));
+	titleImageObj->SetScale(Vec2(1024.f, 1024.f));
+	AddObject(titleImageObj, GROUP_TYPE::Titleimage);
 
+	//m_vecObj[(UINT)GROUP_TYPE::Titleimage].push_back(titleImageObj);
 	// Monster Object Ãß°¡
 	//Monster* pMonsterObj = new Monster;
 	//pMonsterObj->SetPos(Vec2(640.f, 50.f));
@@ -85,8 +90,8 @@ void Scene_Start::Exit()
 void Scene_Start::Update()
 {  
 	Scene::Update();
-	if (KEY_TAP(KEY::ENTER))
+	if (KEY_TAP(KEY::SPACE))
 	{
-		ChangeScene(SCENE_TYPE::SCENE_01);
+ 		ChangeScene(SCENE_TYPE::SCENE_01);
 	}
 }

@@ -163,13 +163,16 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
     </ClInclude>
+    <ClInclude Include="Car.h" />
     <ClInclude Include="Collider.h" />
     <ClInclude Include="CollisionMgr.h" />
     <ClInclude Include="Core.h" />
     <ClInclude Include="define.h" />
     <ClInclude Include="EventMgr.h" />
+    <ClInclude Include="FaceEnum.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="func.h" />
+    <ClInclude Include="HeartImage.h" />
     <ClInclude Include="Image.h" />
     <ClInclude Include="KeyMgr.h" />
     <ClInclude Include="Monster.h" />
@@ -196,11 +199,14 @@
     <ClCompile Include="Animation.cpp" />
     <ClCompile Include="Animator.cpp" />
     <ClCompile Include="Bullet.cpp" />
+    <ClCompile Include="Car.cpp" />
     <ClCompile Include="Collider.cpp" />
     <ClCompile Include="CollisionMgr.cpp" />
     <ClCompile Include="Core.cpp" />
     <ClCompile Include="EventMgr.cpp" />
+    <ClCompile Include="FaceEnum.cpp" />
     <ClCompile Include="func.cpp" />
+    <ClCompile Include="HeartImage.cpp" />
     <ClCompile Include="Image.cpp" />
     <ClCompile Include="KeyMgr.cpp" />
     <ClCompile Include="main.cpp" />

@@ -30,7 +30,7 @@ enum class KEY
 	UP,
 	DOWN,
 	Q,W,E,R,T,Y,U,I,O,P,
-	A,S,D,F,G,Z,X,C,V,B,
+	A,S,D,F,G,H,Z,X,C,V,B,
 	ALT,LSHIFT, CTRL, SPACE, ENTER, ESC,
 	LBTN,RBTN, 
 	LAST // 끝 (END=는 있으니까)
@@ -38,12 +38,10 @@ enum class KEY
 
 enum class GROUP_TYPE
 {
-	DEFAULT,
+	DEFAULT = 0,
 	PLAYER,
-	BULLET_PLAYER,
-	BULLET_MONSTER,
-	MONSTER,
-
+	Titleimage,
+	Car,
 	END = 32,
 };
 
