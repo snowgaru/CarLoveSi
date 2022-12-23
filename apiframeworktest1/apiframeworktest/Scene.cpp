@@ -60,7 +60,7 @@ void Scene::DeleteGroup(GROUP_TYPE _eTarget)
 	//}
 	//m_vecObj[(UINT)_eTarget].clear();
 //	Safe_Delete_Vec(m_vecObj[(UINT)_eTarget]);
-	Safe_Delete_Vec<Object*>(m_vecObj[(UINT)_eTarget]);
+	//Safe_Delete_Vec<Object*>(m_vecObj[(UINT)_eTarget]);
 
 }
 
