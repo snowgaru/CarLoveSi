@@ -2,8 +2,7 @@
 #include "Object.h"
 
 class Image;
-class Player :
-    public Object
+class Player : public Object
 {
 private:
     Image* m_pImage;
