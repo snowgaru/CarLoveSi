@@ -1,5 +1,6 @@
 #pragma once
 #include "pch.h"
+#include "FaceEnum.h"
 class Scripts
 {
 public:
@@ -13,5 +14,8 @@ public:
 
 	int oneFav;
 	int twoFav;
+
+	FaceEnum oneFace;
+	FaceEnum twoFace;
 };
 

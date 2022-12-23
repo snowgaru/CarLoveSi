@@ -26,6 +26,8 @@ Scene_01::Scene_01()
 	one->oneFav = -1;
 	one->twoFav = 1;
 
+	one->oneFace = FaceEnum::Sad;
+	one->twoFace = FaceEnum::Shy;
 	
 
 	scripts[0] = *one;
@@ -145,10 +147,16 @@ void Scene_01::Update()
 			if (isOne)
 			{
 				answerText->ChangeText(scripts[0].oneAnswer, 999);
+				favorite += scripts[0].oneFav;
+				favText->ChangeText(L"현재호감도 : %d", favorite);
+				carObj->ChangeImage(scripts[0].oneFace);
 			}
 			if (isTwo)
 			{
 				answerText->ChangeText(scripts[0].twoAnswer, 999);
+				favorite += scripts[0].twoFav;
+				favText->ChangeText(L"현재호감도 : %d", favorite);
+				carObj->ChangeImage(scripts[0].twoFace);
 			}
 			isOne = false;
 			isTwo = false;
@@ -160,6 +168,7 @@ void Scene_01::Update()
 			oneDecisionText->ChangeText(L"", 999);
 			twoDecisionText->ChangeText(L"", 999);
 			answerText->ChangeText(L"", 999);
+			carObj->ChangeImage(FaceEnum::Default);
 			//랜덤으로 기획 바꾸기 ㄱ
 
 		default:

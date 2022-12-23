@@ -6,6 +6,7 @@
 #include<string>
 #include "Scripts.h"
 #include "TextObj.h"
+#include "FaceEnum.h"
 class Scene_01 :
     public Scene
 {
@@ -18,10 +19,8 @@ public:
     TextObj* twoDecisionText;
     TextObj* answerText;
 
-
-
 public:
-    Scripts scripts[5];
+    Scripts scripts[6];
     Car* carObj;
     Scene_01();
     virtual ~Scene_01();
