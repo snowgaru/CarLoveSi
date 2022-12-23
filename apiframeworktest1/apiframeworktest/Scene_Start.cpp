@@ -10,6 +10,7 @@
 #include "KeyMgr.h"
 #include "SceneMgr.h"
 #include "SoundMgr.h"
+#include "TitleImage.h";
 Scene_Start::Scene_Start()
 {
 }
@@ -19,22 +20,28 @@ Scene_Start::~Scene_Start()
 }
 void Scene_Start::Enter()
 {
-	SoundMgr::GetInst()->LoadSound(L"BGM", true, L"Sound\\pianobgm.wav");
-	SoundMgr::GetInst()->Play(L"BGM");
-
+	//SoundMgr::GetInst()->LoadSound(L"BGM", true, L"Sound\\pianobgm.wav");
+	//SoundMgr::GetInst()->Play(L"BGM");
 	// Object 추가
 	//Object* pObj = new Player;
 	//pObj->SetPos(Vec2(Core::GetInst()->GetResolution().x/2, Core::GetInst()->GetResolution().y/2));
 	//pObj->SetScale(Vec2(100.f,100.f));
 	//AddObject(pObj, GROUP_TYPE::PLAYER);
 
-//	Object* pOtherPlayer = new Player(*(Player*)pObj);
-	/*Object* pOtherPlayer = pObj->Clone();
-	pOtherPlayer->SetPos(Vec2(Core::GetInst()->GetResolution().x / 2.f + 100.f, Core::GetInst()->GetResolution().y / 2.f));
-	AddObject(pOtherPlayer, GROUP_TYPE::PLAYER);*/
+	//Object* pOtherPlayer = new Player(*(Player*)pObj);
+	///*Object* pOtherPlayer = pObj->Clone();
+	//pOtherPlayer->SetPos(Vec2(Core::GetInst()->GetResolution().x / 2.f + 100.f, Core::GetInst()->GetResolution().y / 2.f));
+	//AddObject(pOtherPlayer, GROUP_TYPE::PLAYER);*/
 
 	//m_vecObj[(UINT)GROUP_TYPE::DEFAULT].push_back(pObj); 
 
+	Object* titleImageObj = new TitleImage;
+	titleImageObj->SetPos(Vec2(Core::GetInst()->GetResolution().x / 2.f,
+		Core::GetInst()->GetResolution().y / 2.f));
+	titleImageObj->SetScale(Vec2(1024.f, 1024.f));
+	AddObject(titleImageObj, GROUP_TYPE::Titleimage);
+
+	//m_vecObj[(UINT)GROUP_TYPE::Titleimage].push_back(titleImageObj);
 	// Monster Object 추가
 	//Monster* pMonsterObj = new Monster;
 	//pMonsterObj->SetPos(Vec2(640.f, 50.f));
@@ -83,8 +90,8 @@ void Scene_Start::Exit()
 void Scene_Start::Update()
 {  
 	Scene::Update();
-	if (KEY_TAP(KEY::ENTER) || KEY_TAP(KEY::SPACE))
+	if (KEY_TAP(KEY::SPACE))
 	{
-		// 다음 텍스트 출력
+ 		ChangeScene(SCENE_TYPE::SCENE_01);
 	}
 }

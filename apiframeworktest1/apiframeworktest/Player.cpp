@@ -2,6 +2,7 @@
 #include "Player.h"
 #include "KeyMgr.h"
 #include "TimeMgr.h"
+#include "Bullet.h"
 #include "SceneMgr.h"
 #include "Scene.h"
 #include "Image.h"
@@ -10,8 +11,6 @@
 #include "Collider.h"
 #include "Animator.h"
 #include "Animation.h"
-#include "Core.h"
-
 Player::Player()
 {
 	// collider »õ¼º
@@ -38,7 +37,7 @@ Player::~Player()
 }
 void Player::Update()
 {
-	Vec2 vPos = GetPos();
+	/*Vec2 vPos = GetPos();
 	if(KEY_HOLD(KEY::UP))
 	{
 		vPos.y -= 300.f * fDT;
@@ -58,8 +57,8 @@ void Player::Update()
 	if (KEY_TAP(KEY::SPACE))
 	{
 		CreateBullet();
-	}
-	SetPos(vPos);
+	}*/
+	//SetPos(vPos);
 	GetAnimator()->Update();
 }
 
@@ -68,22 +67,23 @@ void Player::CreateBullet()
 	Vec2 vBulletPos = GetPos();
 	vBulletPos.y -= GetScale().y / 2.f;
 
-	//Bullet* pBullet = new Bullet;
-	//pBullet->SetName(L"Bullet_Player");
-	//pBullet->SetPos(vBulletPos);
-	//pBullet->SetScale(Vec2(25.f, 25.f));
-	//pBullet->SetDir(Vec2(0.f, -1.f));
-	
+	// 
+	Bullet* pBullet = new Bullet;
+	pBullet->SetName(L"Bullet_Player");
+	pBullet->SetPos(vBulletPos);
+	pBullet->SetScale(Vec2(25.f, 25.f));
+	pBullet->SetDir(Vec2(0.f, -1.f));
+	//CreateObject(pBullet, GROUP_TYPE::BULLET_PLAYER);
 	//Scene* pCurScene = SceneMgr::GetInst()->GetCurScene();
 	//pCurScene->AddObject(pBullet,GROUP_TYPE::BULLET);
 }
 void Player::Render(HDC _dc)
 {
 	Component_Render(_dc);
-	/*int Width = (int)m_pImage->GetWidth();
+	int Width = (int)m_pImage->GetWidth();
 	int Height = (int)m_pImage->GetHeight();
 
-	Vec2 vPos = GetPos();*/
+	Vec2 vPos = GetPos();
 	//BitBlt(_dc
 	//	,(int)(vPos.x - (float)(Width / 2))
 	//	,(int)(vPos.y - (float)(Height / 2))

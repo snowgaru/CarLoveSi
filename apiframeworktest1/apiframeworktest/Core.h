@@ -30,6 +30,9 @@ public:
 	const HWND& GetWndHandle() { return m_hWnd; }
 	const POINT& GetResolution() { return m_ptResolution; }
 	const HDC& GetMainDC() { return m_hDC; }
+	const HDC& GetMemDC() {
+		return m_memDC;
+	}
 	HBRUSH GetBrush(BRUSH_TYPE _eType) { return m_arrBrush[(UINT)_eType]; }
 	HPEN GetPen(PEN_TYPE _eType) { return m_arrPen[(UINT)_eType]; }
 public:
