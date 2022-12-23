@@ -42,6 +42,7 @@ enum class GROUP_TYPE
 	PLAYER,
 	Titleimage,
 	Car,
+	Text,
 	END = 32,
 };
 
