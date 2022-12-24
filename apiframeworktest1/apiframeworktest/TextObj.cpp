@@ -20,7 +20,8 @@ void TextObj::ChangeText(wstring str, int fav)
 TextObj::TextObj(int _x, int _y)
 {
 	x = _x; y = _y;
-	
+	l = x + 3000;
+	r = y + 1000;
 }
 
 TextObj::~TextObj()
@@ -33,8 +34,8 @@ void TextObj::Update()
 
 void TextObj::Render(HDC _dc)
 {
-	TextOut(Core::GetInst()->GetMemDC(), x, y, input, lstrlen(input));
-	//TextOut(Core::GetInst()->GetMainDC(), 400, 200, input, lstrlen(input));
-	//DrawText(_dc, text, -1, &rt, DT_CENTER);
+	RECT rt = { x, y, l, r };
+	DrawText(Core::GetInst()->GetMemDC(), input, -1, &rt, DT_LEFT | DT_WORDBREAK);
 	
+	//TextOut(Core::GetInst()->GetMemDC(), x, y, input, lstrlen(input));
 }
