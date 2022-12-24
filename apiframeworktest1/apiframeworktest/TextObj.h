@@ -7,7 +7,7 @@ private :
 	CLONE(TextObj);
 public:
 	TCHAR input[512];
-	int x, y;
+	int x, y, l, r;
 
 public:
 	void ChangeText(wstring strint, int fav);

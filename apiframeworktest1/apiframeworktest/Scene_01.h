@@ -18,6 +18,7 @@ public:
     TextObj* oneDecisionText;
     TextObj* twoDecisionText;
     TextObj* answerText;
+    TextObj* amountOfChangeText;
 
 public:
     Scripts scripts[6];
@@ -29,7 +30,11 @@ public:
     bool isSelect;
     bool isOne;
     bool isTwo;
+    bool isSuccess;
+    bool isFail;
     LPCWSTR strFav = TEXT("È£°¨µµ : ");
+
+    int random = 0;
     //LPCWSTR strFav = TEXT(intFav);
 
     string intFav = to_string(favorite);
@@ -39,6 +44,7 @@ public:
     virtual void Enter() override;
     virtual void Exit() override;
     virtual void Update() override;
+    void ReSetting();
     //void ShowText(HDC _dc);
 };
 

@@ -35,7 +35,7 @@ void Scene_Start::Enter()
 
 	//m_vecObj[(UINT)GROUP_TYPE::DEFAULT].push_back(pObj); 
 
-	Object* titleImageObj = new TitleImage;
+	Object* titleImageObj = new TitleImage(L"Image\\Title.bmp");
 	titleImageObj->SetPos(Vec2(Core::GetInst()->GetResolution().x / 2.f,
 		Core::GetInst()->GetResolution().y / 2.f));
 	titleImageObj->SetScale(Vec2(1024.f, 1024.f));

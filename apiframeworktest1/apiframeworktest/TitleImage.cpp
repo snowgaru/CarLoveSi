@@ -3,11 +3,11 @@
 #include "ResMgr.h"
 #include "Collider.h"
 #include "Image.h"
-TitleImage::TitleImage()
+TitleImage::TitleImage(wstring str)
 {
 	//CreateCollider();
 	//GetCollider()->SetScale(Vec2(200.f, 300.f));
-	m_pImage = ResMgr::GetInst()->ImgLoad(L"TitleImage", L"Image\\Title.bmp");
+	m_pImage = ResMgr::GetInst()->ImgLoad(str, str);
 }
 
 TitleImage::~TitleImage()

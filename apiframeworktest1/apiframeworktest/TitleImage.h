@@ -9,7 +9,7 @@ private:
 	CLONE(TitleImage);
 public:
 	
-	TitleImage();
+	TitleImage(wstring str);
 	~TitleImage();
 	void Update()       override;
 	void Render(HDC _dc) override;
