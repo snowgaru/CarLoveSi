@@ -1,4 +1,41 @@
-﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(519,5): warning MSB8028: 중간 디렉터리(x64\Debug\)에 다른 프로젝트(apiframeworktest.vcxproj)에서 공유하는 파일이 포함되어 있습니다.  이로 인해 잘못된 정리 및 다시 빌드 동작이 수행될 수 있습니다.
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(513,5): warning MSB8028: 중간 디렉터리(x64\Debug\)에 다른 프로젝트(apiframeworktest.vcxproj)에서 공유하는 파일이 포함되어 있습니다.  이로 인해 잘못된 정리 및 다시 빌드 동작이 수행될 수 있습니다.
+  Animation.cpp
+  Animator.cpp
+  Bullet.cpp
+C:\Users\USER\Documents\CarLoveSi\apiframeworktest1\apiframeworktest\Bullet.cpp(11,1): warning C4305: '초기화 중': 'double'에서 'float'(으)로 잘립니다.
+  Car.cpp
+  Collider.cpp
+  CollisionMgr.cpp
+  Core.cpp
+  EventMgr.cpp
+  FaceEnum.cpp
+  func.cpp
+  HeartImage.cpp
+  Image.cpp
+  KeyMgr.cpp
+  main.cpp
+  Monster.cpp
+  Object.cpp
+  PathMgr.cpp
+C:\Users\USER\Documents\CarLoveSi\apiframeworktest1\apiframeworktest\PathMgr.cpp(17,35): warning C4267: '초기화 중': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Player.cpp
+C:\Users\USER\Documents\CarLoveSi\apiframeworktest1\apiframeworktest\Player.cpp(31,20): warning C4267: '인수': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Res.cpp
+  ResMgr.cpp
+  Scene.cpp
+  SceneMgr.cpp
   Scene_01.cpp
-C:\Users\POWERUSER\Documents\CarLoveSi\apiframeworktest1\apiframeworktest\Scene_01.cpp(129,8): warning C4101: 'hFontOriginal' :참조되지 않은 지역 변수입니다.
-  apiframeworktest.vcxproj -> C:\Users\POWERUSER\Documents\CarLoveSi\apiframeworktest1\OutPut\bin_debug\Gamep_winapiframework.exe
+C:\Users\USER\Documents\CarLoveSi\apiframeworktest1\apiframeworktest\Scene_01.cpp(129,8): warning C4101: 'hFontOriginal' :참조되지 않은 지역 변수입니다.
+  Scene_Start.cpp
+C:\Users\USER\Documents\CarLoveSi\apiframeworktest1\apiframeworktest\Scene_Start.cpp(13,10): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
+  SelectGDI.cpp
+  Sound.cpp
+  SoundMgr.cpp
+  TextObj.cpp
+  TimeMgr.cpp
+  TitleImage.cpp
+  Vec2.cpp
+C:\Users\USER\Documents\CarLoveSi\apiframeworktest1\apiframeworktest\Vec2.cpp(26,5): warning C4244: '초기화 중': 'long'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\USER\Documents\CarLoveSi\apiframeworktest1\apiframeworktest\Vec2.cpp(27,5): warning C4244: '초기화 중': 'long'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  BWindow.cpp
+  apiframeworktest.vcxproj -> C:\Users\USER\Documents\CarLoveSi\apiframeworktest1\OutPut\bin_debug\Gamep_winapiframework.exe
