@@ -6,6 +6,8 @@
 #include<string>
 #include "Scripts.h"
 #include "TextObj.h"
+#include "Sound.h"
+#include "SoundMgr.h"
 #include "FaceEnum.h"
 class Scene_01 :
     public Scene
@@ -21,6 +23,7 @@ public:
     TextObj* amountOfChangeText;
 
 public:
+    Sound* m_BGM;
     Scripts scripts[6];
     Car* carObj;
     Scene_01();

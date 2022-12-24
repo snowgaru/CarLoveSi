@@ -1,6 +1,6 @@
 #pragma once
-#include "fmod.hpp"
 #pragma comment(lib, "fmod_vc")
+#include "../OutPut/bin/core/inc/fmod.hpp"
 enum class SOUND_CHANNEL
 {
 	SC_BGM, SC_EFFECT, SC_END

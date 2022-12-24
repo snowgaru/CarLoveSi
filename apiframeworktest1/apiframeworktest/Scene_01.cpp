@@ -6,7 +6,6 @@
 #include "PathMgr.h"
 #include "KeyMgr.h"
 #include "SceneMgr.h"
-#include "SoundMgr.h"
 #include "FaceEnum.h"
 #include "HeartImage.h"
 #include "Car.h"
@@ -126,6 +125,9 @@ Scene_01::~Scene_01()
 
 void Scene_01::Enter()
 {
+	SoundMgr::GetInst()->LoadSound(L"BGM", true, L"Sound\\BGM.wav");
+	SoundMgr::GetInst()->Play(L"BGM");
+
 	HFONT hFontOriginal, hFont1;
 	hFont1 = CreateFont(36, 36, 36, 36, 36, false, false, false,
 		JOHAB_CHARSET, OUT_DEFAULT_PRECIS, CLIP_DEFAULT_PRECIS,

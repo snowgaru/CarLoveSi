@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "SoundMgr.h"
 #include "PathMgr.h"
+
 SoundMgr::SoundMgr()
 	:m_pSystem(nullptr)
 {}
