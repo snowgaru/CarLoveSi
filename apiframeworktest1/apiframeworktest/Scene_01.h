@@ -32,6 +32,7 @@ public:
     bool isTwo;
     bool isSuccess;
     bool isFail;
+    bool isQuit;
     LPCWSTR strFav = TEXT("È£°¨µµ : ");
 
     int random = 0;

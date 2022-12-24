@@ -36,7 +36,7 @@ Scene_01::Scene_01()
 	Scripts* one = new Scripts;
 	one->firstStr = L"너한테 물어보고 싶은 질문이 있었어. 내 첫 인상은 어땠어? \n막 설레고 그렇지 않았니?";
 	one->oneDecision = L"당연한거 아니야? 어떻게 반하지 않을 수가 있어";
-	one->twoDecision = L"이게 무슨 미친소리야 사람이 어떻게 차를 보고 그런 생각이 들어";
+	one->twoDecision = L"이게 무슨 미친소리야? \n사람이 어떻게 차를 보고 그런 생각이 들어";
 
 	one->oneAnswer = L"이런 시시한 대답을 원한게 아니었는데 말이야. 너무 실망인걸";
 	one->twoAnswer = L"이 정도는 되야 내 주인이지. 역시 너무 마음에 들어";
@@ -89,7 +89,7 @@ Scene_01::Scene_01()
 	four->oneAnswer = L"어딜 쳐다보는거야!! 주인님 변태!!";
 	four->twoAnswer = L"역시 알아봐주는구나? ㅎㅎㅎ";
 
-	four->oneFav =-20;
+	four->oneFav = -20;
 	four->twoFav = 15;
 
 	four->oneFace = FaceEnum::Shy;
@@ -231,75 +231,82 @@ void Scene_01::Update()
 			return;
 		}
 
+		if (isQuit)
+		{
+			DestroyWindow(Core::GetInst()->GetWndHandle());
+		}
+
 		//기획오면 수정
 		if (isFail)
 		{
 			firstText->ChangeText(L"결국 마음을 얻는데 실패했네.. \n이 방법 밖에 없는건가.\n\n(부ㅜㅜㅇ)\n(콰ㅏㅏㅇ)\n\n가지지 못하면 부숴버려야지..", 999);
+			isQuit = true;
 		}
-		if (isSuccess)
+		else if (isSuccess)
 		{
 			firstText->ChangeText(L"드디어 이쪽을 봐주는구나. \n우리 같이 드라이브나 갈까? 내가 좋은 장소를 알고있어. \n넌 이제부터 영원히 내꺼야.", 999);
+			isQuit = true;
 		}
-
-		switch (cnt++)
+		else if(!isFail && !isSuccess)
 		{
-			if (isFail || isSuccess)
+			switch (cnt++)
 			{
-				return;
-			}
-		case 0:
-			firstText->ChangeText(scripts[random].firstStr, 999);
-			break;
 
-		case 1:
-			oneDecisionText->ChangeText(scripts[random].oneDecision, 999);
-			twoDecisionText->ChangeText(scripts[random].twoDecision, 999);
-			isSelect = true;
+			case 0:
+				firstText->ChangeText(scripts[random].firstStr, 999);
+				break;
 
-		case 2:
-			if (isOne)
-			{
-				answerText->ChangeText(scripts[random].oneAnswer, 999);
-				favorite += scripts[random].oneFav;
-				amountOfChangeText->ChangeText(L"호감도 변화량 : %d", scripts[random].oneFav);
-				favText->ChangeText(L"현재호감도 : %d", favorite);
-				carObj->ChangeImage(scripts[random].oneFace);
-			}
-			if (isTwo)
-			{
-				answerText->ChangeText(scripts[random].twoAnswer, 999);
-				favorite += scripts[0].twoFav;
-				amountOfChangeText->ChangeText(L"호감도 변화량 : %d", scripts[random].twoFav);
-				favText->ChangeText(L"현재호감도 : %d", favorite);
-				carObj->ChangeImage(scripts[random].twoFace);
-			}
-			isOne = false;
-			isTwo = false;
-			break;
+			case 1:
+				oneDecisionText->ChangeText(scripts[random].oneDecision, 999);
+				twoDecisionText->ChangeText(scripts[random].twoDecision, 999);
+				isSelect = true;
 
-		case 3:
-			cnt = 0;
-			firstText->ChangeText(L"", 999);
-			oneDecisionText->ChangeText(L"", 999);
-			twoDecisionText->ChangeText(L"", 999);
-			answerText->ChangeText(L"", 999);
-			amountOfChangeText->ChangeText(L"", 999);
-			carObj->ChangeImage(FaceEnum::Default);
-			//랜덤으로 기획 바꾸기 ㄱ
-			ReSetting();
+			case 2:
+				if (isOne)
+				{
+					answerText->ChangeText(scripts[random].oneAnswer, 999);
+					favorite += scripts[random].oneFav;
+					amountOfChangeText->ChangeText(L"호감도 변화량 : %d", scripts[random].oneFav);
+					favText->ChangeText(L"현재호감도 : %d", favorite);
+					carObj->ChangeImage(scripts[random].oneFace);
+				}
+				if (isTwo)
+				{
+					answerText->ChangeText(scripts[random].twoAnswer, 999);
+					favorite += scripts[random].twoFav;
+					amountOfChangeText->ChangeText(L"호감도 변화량 : %d", scripts[random].twoFav);
+					favText->ChangeText(L"현재호감도 : %d", favorite);
+					carObj->ChangeImage(scripts[random].twoFace);
+				}
+				isOne = false;
+				isTwo = false;
+				break;
 
-			if (favorite >= 100)
-			{
-				isSuccess = true;
-			}
-			if (favorite <= 0)
-			{
-				isFail = true;
-			}
+			case 3:
+				cnt = 0;
+				firstText->ChangeText(L"", 999);
+				oneDecisionText->ChangeText(L"", 999);
+				twoDecisionText->ChangeText(L"", 999);
+				answerText->ChangeText(L"", 999);
+				amountOfChangeText->ChangeText(L"", 999);
+				carObj->ChangeImage(FaceEnum::Default);
+				//랜덤으로 기획 바꾸기 ㄱ
+				ReSetting();
 
-		default:
-			break;
+				if (favorite >= 100)
+				{
+					isSuccess = true;
+				}
+				if (favorite <= 0)
+				{
+					isFail = true;
+				}
+
+			default:
+				break;
+			}
 		}
+		
 	}
 
 
